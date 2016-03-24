@@ -24,7 +24,8 @@ module.exports = Plantuml =
       if prepared
         pngFilePath = getPngFilePath(buffer.file)
         umlFilePath = buffer.file.path
-        writeAndOpenPng(umlFilePath,pngFilePath)
+        charset = buffer.file.getEncoding()
+        writeAndOpenPng(umlFilePath, pngFilePath, charset)
       else
         atom.notifications.addWarning('Could not write file.', {
           detail:'Please make sure file can be written to disk.'})

@@ -4,9 +4,11 @@ fs = require 'fs-plus'
 module.exports =
 class PlantUml
   constructor: () ->
-  @writeAndOpenPng:(umlFilePath, pngFilePath) ->
+  @writeAndOpenPng:(umlFilePath, pngFilePath, charset) ->
     command = 'plantuml'
     args = ['-failfast2', umlFilePath]
+    if charset
+      args = args.concat('-charset', charset)
     exit = (code) ->
       if PlantUml.isRegeneratedPng(pngFilePath, startTime)
         atom.workspace.open(pngFilePath, {
