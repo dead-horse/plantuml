@@ -1,5 +1,5 @@
 {
-  "name": "plantuml",
+  "name": "plantuml-generator",
   "main": "./lib/plantuml",
   "version": "0.1.2",
   "description": "Adds shortcut to generate png files out of PlantUml text files. Expects plantUml to be available via PATH.",
